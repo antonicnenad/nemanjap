@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main # ili master, zavisno od podešavanja repo-a
+
+media_folder: "images/uploads" # folder za slike
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "index"
+        file: "index.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "About"
+        name: "about"
+        file: "about.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Contact"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Blog"
+        name: "blog"
+        file: "blog.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "FAQs"
+        name: "faqs"
+        file: "faqs.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Portfolio"
+        name: "portfolio"
+        file: "portfolio.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Information"
+        name: "information"
+        file: "information.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Post"
+        name: "post"
+        file: "post.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
+      - label: "Portfolio Page"
+        name: "portfolio-page"
+        file: "portfolio-page.html"
+        fields:
+          - { label: "Content", name: "body", widget: "markdown" }
