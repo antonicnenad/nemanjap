@@ -1,56 +1,17 @@
 backend:
   name: git-gateway
-  branch: main # ili master, zavisno od podešavanja repo-a
+  branch: main # Branch to update (main by default)
 
-media_folder: "images/uploads" # folder za slike
-public_folder: "/images/uploads"
+media_folder: "images/uploads" # Folder for uploaded files
+public_folder: "/images/uploads" # Folder for the frontend
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home"
-        name: "index"
-        file: "index.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "About"
-        name: "about"
-        file: "about.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "Contact"
-        name: "contact"
-        file: "contact.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "Blog"
-        name: "blog"
-        file: "blog.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "FAQs"
-        name: "faqs"
-        file: "faqs.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "Portfolio"
-        name: "portfolio"
-        file: "portfolio.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "Information"
-        name: "information"
-        file: "information.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "Post"
-        name: "post"
-        file: "post.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
-      - label: "Portfolio Page"
-        name: "portfolio-page"
-        file: "portfolio-page.html"
-        fields:
-          - { label: "Content", name: "body", widget: "markdown" }
+  - name: "posts" # Used in routes, e.g., /admin/collections/posts
+    label: "Posts" # Used in the UI
+    folder: "posts" # Folder to save content
+    create: true # Allow users to create new documents
+    slug: "{{slug}}" # Filename template
+    fields: # The fields each document in this collection have
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
